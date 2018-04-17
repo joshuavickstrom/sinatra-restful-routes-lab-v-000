@@ -7,6 +7,7 @@ class RecipesController < ApplicationController
   get '/recipes/new' do
     erb :new
   end
+  
   get '/recipes/:id' do
     @recipe = Recipe.find_by_id(params[:id])
     erb :"recipes/show"
