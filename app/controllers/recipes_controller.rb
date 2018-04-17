@@ -26,7 +26,11 @@ class RecipesController < ApplicationController
 
   patch '/recipes/:id' do
     @recipe = Recipe.find_by_id(params[:id])
-    erb :"recipes/show"
+    @recipe.name = params[:name]
+    @recipe.ingredients = params[:ingredients]
+    @recipe.cook_time = params[:cook_time]
+    @recipe.save
+    erb :"recipes/#{@recipe.id}/show"
   end
 
 
