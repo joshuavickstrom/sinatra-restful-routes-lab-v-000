@@ -8,4 +8,8 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find_by_id(params[:id])
     erb :"recipes/show"
   end
+
+  get '/recipes/:id/delete' do
+
+  end
 end
