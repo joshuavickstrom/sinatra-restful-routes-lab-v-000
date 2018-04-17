@@ -4,6 +4,10 @@ class RecipesController < ApplicationController
     erb :"recipes/index"
   end
 
+  get '/recipes/new' do
+    erb :"recipes/new"
+  end
+
   get '/recipes/:id' do
     @recipe = Recipe.find_by_id(params[:id])
     erb :"recipes/show"
@@ -25,8 +29,6 @@ class RecipesController < ApplicationController
     erb :"recipes/show"
   end
 
-  get '/recipes/new' do
-    erb :"recipes/new"
-  end
+
 
 end
