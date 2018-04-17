@@ -7,7 +7,7 @@ class RecipesController < ApplicationController
   get '/recipes/new' do
     erb :new
   end
-  
+
   get '/recipes/:id' do
     @recipe = Recipe.find_by_id(params[:id])
     erb :"recipes/show"
@@ -27,5 +27,10 @@ class RecipesController < ApplicationController
   patch '/recipes/:id' do
     @recipe = Recipe.find_by_id(params[:id])
     erb :"recipes/show"
+  end
+
+  post '/recipes' do
+    @recipe = Recipe.create(params)
+    redirect to "/recipes/#{@recipe.id}"
   end
 end
