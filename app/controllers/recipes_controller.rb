@@ -9,7 +9,7 @@ class RecipesController < ApplicationController
     erb :"recipes/show"
   end
 
-  get '/recipes/:id/delete' do
-
+  delete '/recipes/:id/delete' do
+    
   end
 end
