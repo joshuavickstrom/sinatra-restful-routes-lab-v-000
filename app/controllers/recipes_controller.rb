@@ -25,7 +25,7 @@ class RecipesController < ApplicationController
     erb :"recipes/show"
   end
 
-  get '/recipes' do
+  get '/recipes/new' do
     erb :"recipes/new"
   end
 
